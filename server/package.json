@@ -1,0 +1,30 @@
+{
+  "name": "pklskuy-backend",
+  "version": "1.0.0",
+  "description": "PKLSkuy - Pekerja Kuli Lapangan",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Md Khaerul",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.0.0-beta.2",
+    "mongoose": "^5.10.3",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "shortid": "^2.2.15",
+    "socket.io": "^2.3.0",
+    "validator": "^13.1.1",
+    "ws.suid": "^0.10.1"
+  }
+}
