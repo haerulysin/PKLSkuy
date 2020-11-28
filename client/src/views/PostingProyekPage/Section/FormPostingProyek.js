@@ -258,6 +258,7 @@ class FormPostingProyek extends Component {
                                                     className={classes.autocompleteInput}
                                                     onPlaceSelected={onPlaceSelected.bind(this)}
                                                     types={['geocode']}
+                                                     apiKey={"AIzaSyBpKP3xuaU6JYfzQKnDzs3HWOMCC7WFYlI"}
                                                     placeholder="Masukkan alamat lengkap"
                                                     componentRestrictions={{ country: "ID" }}
                                                 />

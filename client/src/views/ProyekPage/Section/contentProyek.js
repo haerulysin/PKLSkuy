@@ -81,6 +81,7 @@ class contentProyek extends Component {
             let locationState = this.props.location.state;
             values = locationState;
         }
+
         let visitorIsPosted = this.props.auth.user.id === this.props.projectData.postedBy._id ? true : false;
         return (
             <React.Fragment>
@@ -90,12 +91,8 @@ class contentProyek extends Component {
                             <Grid item xs={12}>
                                 <RincianProyek {...this.props} />
                             </Grid>
-                            {(this.props.projectData.onProgress.status && !visitorIsPosted) &&
-                                <Grid item xs={12}>
-                                    <ProjectLockedCard />
-                                </Grid>
-                            }
-                            {(this.state.limitProposalPost) || (this.props.auth.isAuthenticated && visitorIsPosted) ? '' : (
+                            
+                            {(this.state.limitProposalPost) && (this.props.auth.isAuthenticated && visitorIsPosted) ? '' : (
 
                                 <Grid item xs={12}>
                                     <Formik
@@ -109,6 +106,26 @@ class contentProyek extends Component {
                                         }
                                     </Formik>
                                 </Grid>)
+                            }
+
+                            {(this.props.projectData.onProgress.status && !visitorIsPosted) ?(
+                                <Grid item xs={12}>
+                                    <ProjectLockedCard />
+                                </Grid>):(
+                                    (this.state.limitProposalPost) && (this.props.auth.isAuthenticated && visitorIsPosted) &&
+                                    <Grid item xs={12}>
+                                        <Formik
+                                            initialValues={values}
+                                            validationSchema={validationSchema}
+                                            onSubmit={this.handleSubmitProposal.bind(this)}
+
+                                        >
+                                            {props =>
+                                                <PostingProyek {...props} />
+                                            }
+                                        </Formik>
+                                    </Grid>
+                                )
                             }
 
 

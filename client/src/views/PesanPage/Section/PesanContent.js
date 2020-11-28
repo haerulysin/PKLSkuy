@@ -5,7 +5,6 @@ import {
     Container,
     Typography,
     Button,
-    InputAdornment,
     OutlinedInput,
 } from '@material-ui/core';
 import ChatList from './CustomComponent/ChatList';

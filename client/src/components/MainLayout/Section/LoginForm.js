@@ -6,8 +6,6 @@ import {
     Button,
     Grid,
     TextField,
-    FormControlLabel,
-    Checkbox,
     withStyles,
     Collapse,
     CircularProgress
